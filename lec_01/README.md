@@ -1,6 +1,6 @@
 # 머신 러닝의 기본적인 용어와 개념 설명
 
-## 무엇이 머신 러닝인가?
+## 머신 러닝?
 
 ### 머신 러닝의 개념
 
@@ -201,3 +201,45 @@ print(sess.run(hello))
 ```
 
 텐서플로는 session 을 만들고, 여기에 노드를 적용시켜 실행이 가능하다.
+
+### Computational Graph
+
+다음으로 간단한 Computational Graph를 그려보자. 2개의 노드가 주어졌을 때 이 값을 더하는 노드를 만들 것이다.
+
+```py
+node1 = tf.constant(3.0, tf.float32)
+node2 = tf.constant(4.0)
+node3 = tf.add(node1, node2)
+```
+
+우선 2개의 상수를 node1,node2로 만든다. 이 후, node3을 node1 + node2가 되도록 구현한다.
+
+그럼 이 값들을 출력하기 위해서는 어떻게 해야할까
+
+```py
+print("node1:", node1, "node2:", node2)
+print("node3:", node3)
+
+# 결과
+node1: Tensor("Const_1:0", shape=(), dtype=float32) node2: Tensor("Const_2:0", shape=(), dtype=float32)
+node3:  Tensor("Add:0", shape=(), dtype=float32)
+```
+
+기대값은 상수와 두 상수의 합이었으나, 위와 같이 node를 출력할 경우에는 Tensor 객체의 정보가 출력된다.
+따라서 제일 처음 예제처럼 session을 생성 후, session에서 값을 출력해야한다.
+결과는 아래와 같다.
+
+```py
+sess = tf.Session()
+print("sess.run(node1, node2):", sess.run([node1, node2]))
+print("sess.run(node3):", sess.run(node3))
+
+# 결과
+
+sess.run(node1, node2):  [3.0, 4.0]
+sess.run(node3):  7.0
+```
+
+### 텐서플로 머신러닝 
+
+1. TensorFlow operation들로 
