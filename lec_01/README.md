@@ -269,12 +269,12 @@ print(sess.run(adder_node, feed_dict={a: [1,3], b: [2, 4]}))
 - Rank: 몇 차원의 Array인지
 
 
-<img src="https://user-images.githubusercontent.com/20614643/44628170-bc497a80-a975-11e8-8b47-fb6b9bde1fb5.png" width="500px"/>
+<img src="https://user-images.githubusercontent.com/20614643/44628170-bc497a80-a975-11e8-8b47-fb6b9bde1fb5.png" width="700px"/>
 
 - Shapes : 몇 개의 element를 가지고 있는지
 
-<img src="https://user-images.githubusercontent.com/20614643/44628229-b6a06480-a976-11e8-9db8-3bdc3e00a12a.png" width="500px"/>
+<img src="https://user-images.githubusercontent.com/20614643/44628229-b6a06480-a976-11e8-9db8-3bdc3e00a12a.png" width="700px"/>
 
 - Types : 말그대로 데이터의 타입. 대부분의 경우 float32를 사용
 
-<img src="https://user-images.githubusercontent.com/20614643/44628230-b6a06480-a976-11e8-9bdd-2247eba13bfb.png" width="500px"/>
+<img src="https://user-images.githubusercontent.com/20614643/44628230-b6a06480-a976-11e8-9bdd-2247eba13bfb.png" width="700px"/>
