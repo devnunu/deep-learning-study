@@ -202,7 +202,7 @@ print(sess.run(hello))
 
 텐서플로는 session 을 만들고, 여기에 노드를 적용시켜 실행이 가능하다.
 
-### Computational Graph
+### Computational Graph 1
 
 다음으로 간단한 Computational Graph를 그려보자. 2개의 노드가 주어졌을 때 이 값을 더하는 노드를 만들 것이다.
 
@@ -242,4 +242,39 @@ sess.run(node3):  7.0
 
 ### 텐서플로 머신러닝 
 
-1. TensorFlow operation들로 
+결과적으로 텐서플로 머신러닝은 아래의 3가지 순서로 동작한다.
+
+1. TensorFlow operation들로 그래프를 만든다
+2. sess.run을 통해 그래프를 실행시킨다
+3. 그 결과 값들이 업데이트 되거나 결과값이 반환된다.
+
+### Placeholder
+
+앞서 만든 더하기 그래프 예제는 처음 시작할 때 상수가 고정값이며, 이를 통해 더하기 연산을 수행한다.
+이와 다르게 그래프가 만들어지는 시점에서 값이 입력받기를 원한다면 Placeholder를 사용할 수 있다.
+
+```py
+a = tf.placeholder(tf.float32)
+b = tf.placeholder(tf.float32)
+adder_node = a + b  # + provides a shortcut for tf.add(a, b)
+
+print(sess.run(adder_node, feed_dict={a: 3, b: 4.5}))
+print(sess.run(adder_node, feed_dict={a: [1,3], b: [2, 4]}))
+```
+
+위의 코드에서 볼 수 있듯이, feed_dict에서 값을 넘겨주게 된다. 또한 값은 한가지가 아닌 다항이나 배열의 형태로 전달이 가능하다. 
+
+### Tensor Ranks, Shapes, and Types
+
+- Rank: 몇 차원의 Array인지
+
+
+<img src="https://user-images.githubusercontent.com/20614643/44628170-bc497a80-a975-11e8-8b47-fb6b9bde1fb5.png" width="500px"/>
+
+- Shapes : 몇 개의 element를 가지고 있는지
+
+<img src="https://user-images.githubusercontent.com/20614643/44628229-b6a06480-a976-11e8-9db8-3bdc3e00a12a.png" width="500px"/>
+
+- Types : 말그대로 데이터의 타입. 대부분의 경우 float32를 사용
+
+<img src="https://user-images.githubusercontent.com/20614643/44628230-b6a06480-a976-11e8-9bdd-2247eba13bfb.png" width="500px"/>
