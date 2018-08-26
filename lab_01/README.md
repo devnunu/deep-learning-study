@@ -233,7 +233,7 @@ print(sess.run(hello))
 
 텐서플로는 session 을 만들고, 여기에 노드를 적용시켜 실행이 가능하다.
 
-### Computational Graph 1
+### Computational Graph
 
 다음으로 간단한 Computational Graph를 그려보자. 2개의 노드가 주어졌을 때 이 값을 더하는 노드를 만들 것이다.
 
