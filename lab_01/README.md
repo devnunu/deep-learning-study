@@ -145,7 +145,7 @@ $ brew install homebrew/dupes/zlib
 $ brew install readline xz
 $ CFLAGS="-I$(brew --prefix openssl)/include" \
 LDFLAGS="-L$(brew --prefix openssl)/lib" \
-pyenv install -v 3.6.3
+pyenv install -v [python version]
 ```
 
 ### 특정 폴더 진입시 가상환경 자동실행 설정
