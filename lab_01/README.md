@@ -37,15 +37,15 @@
 
 주어진 환경과 조건 내에서 개발이 진행될 때 explicit programming 이라고 한다. 그러나 모든 프로그래밍 작업이 explicit 하지는 않는데, 예를 들어, 스팸 필터나 무인 주행 자동차는 예측할 수 없는 많은 규칙이 있다.
 
-그래서 1959 년에 Arthur Samuel 이라는 사람이 다음과 같은 생각을 했다. 우리가 모든 조건을 일일히 프로그래밍 하는 것이 아니라, 주어진 자료나 현상에서 자동적으로 배우게 하는 것이다. 이것이 바로 머신러닝의 시초이다. 즉, 프로그래밍에 개발자가 관여하는 것이 아니라 주어진 자료를 바탕으로 학습하는것이 머신 러닝이라고 할 수 있다.
+그래서 1959년에 Arthur Samuel 이라는 사람이 모든 조건을 일일히 프로그래밍 하는 것이 아니라, 주어진 자료나 현상에서 자동적으로 배우게 하는 방법을 제안했다. 이것이 바로 머신러닝의 시초이다. 즉, 프로그래밍에 개발자가 관여하는 것이 아니라 주어진 자료를 바탕으로 기계가 스스로 학습하는것이 머신 러닝이라고 할 수 있다.
 
 ### Supervised/Unsupervised learning
 
-머신러닝은 학습하는 방법에 따라 Supervised/Unsupervised learning 으로 나뉜다.
+머신러닝은 학습하는 방법에 따라 **Supervised/Unsupervised learning** 으로 나뉜다.
 
-Supervised : label 들이 정해져있는 데이터(traning set)로 학습하는 것을 Supervised leaning 이라고 한다. 예를 들어, 이미지가 고양이/개 인지 판별하는 프로그램도 머신 러닝을 바탕으로 개발되는데, cat 또는 dog 라는 label 이 달려있는 이미지로 먼저 학습을 진행한 후 판별을 하게 된다.
+- Supervised : label 들이 정해져있는 데이터(traning set)로 학습하는 것을 Supervised leaning 이라고 한다. 예를 들어, 이미지가 고양이/개 인지 판별하는 프로그램도 머신 러닝을 바탕으로 개발되는데, cat 또는 dog 라는 label 이 달려있는 이미지로 먼저 학습을 진행한 후 판별을 하게 된다.
 
-Unsupervised : 일일히 label 을 달수 없는 자료가 있다. 예를 들면, Google news(비슷한 카테고리의 뉴스 수집)나 Word clustering(단어 수집)등이 있다. 이는 주어진 자료가 아닌 프로그램이 스스로 학습해야한다.
+- Unsupervised : 일일히 label 을 달수 없는 자료가 있다. 예를 들면, Google news(비슷한 카테고리의 뉴스 수집)나 Word clustering(단어 수집)등이 있다. 이는 주어진 자료가 아닌 프로그램이 스스로 학습해야한다.
 
 이중에서 Supervised learning 을 주로 다룰 예정이다.
 
