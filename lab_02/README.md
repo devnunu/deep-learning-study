@@ -58,7 +58,7 @@ H(x) - y
 
 <img src="https://user-images.githubusercontent.com/20614643/44733174-f6f01600-ab21-11e8-8ac6-a62d952b2e04.png" />
 
-좀 더 format 하게 정리하자면, 모든 값들의 차이(거리)를 더해 평균을 구하는 것이 cost function 이라고 할 수 있다. 이 값은 낮을수록 좋다
+즉, 모든 값들의 차이(거리)를 더해 평균을 구하는 것이 cost function 이라고 할 수 있다.
 
 <img src="https://user-images.githubusercontent.com/20614643/44733357-6403ab80-ab22-11e8-8363-8118a52fe53a.png" />
 
