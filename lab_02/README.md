@@ -20,9 +20,6 @@
 <img src="https://user-images.githubusercontent.com/20614643/44731887-1fc2dc00-ab1f-11e8-9bfd-618b2fa7551d.png" />
 
 주어진 데이터 셋을 그래프로 표현한 결과이다. 그래프는 x 값에 대응하는 y 값이 나오는데, 선형 그래프의 형태를 따르므로 Liear 하다.
-
-<img src="https://user-images.githubusercontent.com/20614643/44732425-36b5fe00-ab20-11e8-923f-10d36d7fb816.png" />
-
 세상에 있는 많은 데이터, 현상들이 Linear 하게 나타는 경우는 많이 존재한다. 예를 들어, 숙면시간 대비 달리기 또는 집의 크기와 가격의 경우가 있다. 따라서 Linear 한 가설을 세운다는 것은 위의 그래프와 마찬가지로 데이터 셋에 맞는 선형의 그래프를 찾는 것이다.
 
 ```
@@ -33,7 +30,7 @@ H(x) = Wx + b
 
 ## cost function
 
-<img src="https://user-images.githubusercontent.com/20614643/44732663-c22f8f00-ab20-11e8-812b-aa91b7623b32.png" />
+<img src="https://user-images.githubusercontent.com/20614643/44733649-fad06800-ab22-11e8-8e03-7e82f49bb2a3.png" />
 
 이렇게 나타난 선들 중에서 어떤 선이 우리가 가지고 있는 데이터와 잘 맞는것이지 알아내야한다. 즉, 선의 형태를 위한 W 나 b 를 찾는것이다.
 
@@ -63,7 +60,6 @@ H(x) - y
 
 좀 더 format 하게 정리하자면, 모든 값들의 차이(거리)를 더해 평균을 구하는 것이 cost function 이라고 할 수 있다. 이 값은 낮을수록 좋다
 
-
 <img src="https://user-images.githubusercontent.com/20614643/44733357-6403ab80-ab22-11e8-8363-8118a52fe53a.png" />
 
-정리하자면 위와 같은 수식이 나오며, 앞서 언급했듯이 cost function 의 가장 작은 값(Minimize cost)을 출력하는 W와 b를 구하는 것이 목적이다.
+정리하자면 위와 같은 수식이 나오며, 앞서 언급했듯이 cost function 의 가장 작은 값(Minimize cost)을 출력하는 W 와 b 를 구하는 것이 목적이다.
