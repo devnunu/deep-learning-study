@@ -1,4 +1,4 @@
-# Linear Regression 의 Hypothesis 와 cost
+# Linear Regression 의 Hypothesis 와 cost function
 
 ## Linear Regression(선형 회귀)
 
@@ -28,7 +28,7 @@ H(x) = Wx + b
 
 즉 수식으로는 위와 같이 표현된다. H(x)는 우리의 가설(Hypothesis)이며, W 와 x, b 의 값에 따라 여러 형태의 선이 나타난다.
 
-## cost function
+## cost function과 최소 제곱법
 
 <img src="https://user-images.githubusercontent.com/20614643/44733649-fad06800-ab22-11e8-8e03-7e82f49bb2a3.png" />
 
@@ -54,11 +54,11 @@ H(x) - y
 (H(x) - y)^2
 ```
 
-거리 계산은 위와 같이 수식으로 표현된다. 차이는 + 또는 -가 될 수 있기 때문에 제곱을 하면 차이를 양수로 표현 할 수 있다. 또한 차이가 클때 제곱되면 차이가 더 커지므로 패널티를 부여할 수 있다.
+거리 계산은 위와 같이 수식으로 표현된다. 차이는 + 또는 -가 될 수 있기 때문에 제곱을 하면 차이를 양수로 표현 할 수 있다. 또한 차이가 클때 제곱되면 차이가 더 커지므로 패널티를 부여할 수 있다. 이를 **최소 제곱법**이라고 한다.
 
 <img src="https://user-images.githubusercontent.com/20614643/44733174-f6f01600-ab21-11e8-8ac6-a62d952b2e04.png" />
 
-좀 더 format 하게 정리하자면, 모든 값들의 차이(거리)를 더해 평균을 구하는 것이 cost function 이라고 할 수 있다. 이 값은 낮을수록 좋다
+즉, 모든 값들의 차이(거리)를 더해 평균을 구하는 것이 cost function 이라고 할 수 있다.
 
 <img src="https://user-images.githubusercontent.com/20614643/44733357-6403ab80-ab22-11e8-8363-8118a52fe53a.png" />
 
