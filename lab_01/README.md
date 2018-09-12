@@ -61,7 +61,7 @@ Supervised learning 에서 다루는 주요한 문제점은 다음과 같다
 
 Supervised learning 를 다루는 경우 케이스는 대개 3 가지로 압축된다.
 
-- 시험 공부 시간 대비 최종 시험의 점수 : 0 ~ 100 점 까지 넓은 분포도를 보이는 경우 regression 이라고 한다.
+- 시험 공부 시간 대비 최종 시험의 점수 : 0 ~ 100 점 까지 넓은 분포도를 보이는 경우 continuous 이라고 한다.
 - 시험 공부 시간 대비 최종 시험의 결과(Pass/non-Pass) : 결과를 2 가지로 예측하는 경우 binary classification 라고 한다.
 - 시험 공부 시간 대비 최종 시험의 등급(A,B,C,E and F) : 결과가 다중인 경우 multi-label classification 라고 한다.
 
