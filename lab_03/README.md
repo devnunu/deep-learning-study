@@ -60,3 +60,26 @@ cost, w, b를 3축으로 3차원 그래프를 그렸을 때 위와 같은 그래
 
 만약 Convex function 이 아니라면 위의 그림과 같이 출발선과 경사의 차이에 따라 최솟값에 해당하는 결과가 달라진다.
 
+
+# lab 3
+
+## matplotlib 설치
+
+아래의 링크에서 운영체제에 맞게 라이브러리를 설치한다.
+
+https://matplotlib.org/users/installing.html#macos
+
+## Gradient descent algorithm를 구현
+
+![image](https://user-images.githubusercontent.com/20614643/45331887-4ade0e80-b5a8-11e8-9313-9f9a141e28be.png)
+
+텐서플로에서는 = 로 값을 넣어 줄수 없으므로, 별도로 제공하는 assign 함수를 사용한다.
+
+위와 같이 일일히 미분하여 식으로 변환한 후 사용할 수 도 있지만, 텐서플로에서는 tf.train.GradientDescentOptimizer를 제공해준다.
+
+이떄 파라미터는 learning_rate이다
+
+```
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
+train = optimizer.minimize(cost)
+```
