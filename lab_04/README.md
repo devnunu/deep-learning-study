@@ -107,10 +107,9 @@ w3 = tf.Variable(tf.random_normal([1]), name='weight3')
 b = tf.Variable(tf.random_normal([1]), name='bias')
 ```
 
-Variable은 첫번째로 초기값을 받는데, 위에서는 1개짜리 랜덤 리스트 형식을 변수로 생성한다. random_normal의 첫번째 인자는 shape인데 [1]이라는 뜻은 1개짜리 리스트를 의미한다.
+Variable 은 첫번째로 초기값을 받는데, 위에서는 1 개짜리 랜덤 리스트 형식을 변수로 생성한다. random_normal 의 첫번째 인자는 shape 인데 [1]이라는 뜻은 1 개짜리 리스트를 의미한다.
 
-Variable은 tf.global_variables_initializer()가 동반되어야하는데, 텐서플로의 그래프는 초기화 함수가 실행되어야 값이 할당되기 때문이다. 이 함수의 호출로 인해 변수가 초기화/할당된다.
-
+Variable 은 tf.global_variables_initializer()가 동반되어야하는데, 텐서플로의 그래프는 초기화 함수가 실행되어야 값이 할당되기 때문이다. 이 함수의 호출로 인해 변수가 초기화/할당된다.
 
 ### hypothesis
 
@@ -152,7 +151,7 @@ for step in range(2001):
 
 ## example 2
 
-데이터 셋을 2차원으로 선언한다.
+데이터 셋을 2 차원으로 선언한다.
 
 ```py
 x_data = [[73., 80., 75.],
@@ -178,10 +177,9 @@ W = tf.Variable(tf.random_normal([3, 1]), name='weight')
 b = tf.Variable(tf.random_normal([1]), name='bias')
 ```
 
-placeholder에서 element는 고정이며, instance는 무한이므로 [None, 고정값]의 shape를 가진다.
+placeholder 에서 element 는 고정이며, instance 는 무한이므로 [None, 고정값]의 shape 를 가진다.
 
-W의 shape는 x와 y를 기반으로 계산되며 b는 1개의 리스트이다.
-
+W 의 shape 는 x 와 y 를 기반으로 계산되며 b 는 1 개의 리스트이다.
 
 ### matmul
 
@@ -189,7 +187,54 @@ W의 shape는 x와 y를 기반으로 계산되며 b는 1개의 리스트이다.
 hypothesis = tf.matmul(X, W) + b
 ```
 
-matmul은 행렬의 곱을 나타낸다(matrix multiply)
+matmul 은 행렬의 곱을 나타낸다(matrix multiply)
 (https://www.tensorflow.org/api_docs/python/tf/matmul)
 
 이후 과정은 동일하다.
+
+## example 3
+
+아래 코드는 numpy 를 이용해서 데이터를 호출하고 자르는 예제이다
+
+```py
+xy = np.loadtxt('data-01-test-score.csv', delimiter=',', dtype=np.float32)
+x_data = xy[:, 0:-1]
+y_data = xy[:, [-1]]
+```
+
+csv 파일을 가져 온 후 numpy 의 slice 기능을 사용하여 x 와 y 의 데이터 셋으로 변경한다.
+
+## example 4
+
+```py
+filename_queue = tf.train.string_input_producer(
+    ['data-01-test-score.csv'], shuffle=False, name='filename_queue')
+
+reader = tf.TextLineReader()
+key, value = reader.read(filename_queue)
+
+# Default values, in case of empty columns. Also specifies the type of the
+# decoded result.
+record_defaults = [[0.], [0.], [0.], [0.]]
+xy = tf.decode_csv(value, record_defaults=record_defaults)
+
+# collect batches of csv in
+train_x_batch, train_y_batch = \
+    tf.train.batch([xy[0:-1], xy[-1:]], batch_size=10)
+```
+
+```py
+# Start populating the filename queue.
+coord = tf.train.Coordinator()
+threads = tf.train.start_queue_runners(sess=sess, coord=coord)
+
+for step in range(2001):
+    x_batch, y_batch = sess.run([train_x_batch, train_y_batch])
+    cost_val, hy_val, _ = sess.run(
+        [cost, hypothesis, train], feed_dict={X: x_batch, Y: y_batch})
+    if step % 10 == 0:
+        print(step, "Cost: ", cost_val, "\nPrediction:\n", hy_val)
+
+coord.request_stop()
+coord.join(threads)
+```
